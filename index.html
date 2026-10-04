@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Sabillah Okta Ramadhani 💖</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating Ambient Particles Container -->
+  <div id="particles-bg"></div>
+
+  <!-- Landing Screen (Hero Unboxing) -->
+  <section id="landing-screen" class="landing-screen">
+    <div class="landing-content">
+      <div class="badge-tag">Special Surprise for You ✨</div>
+      <h1 class="main-title">
+        Happy Birthday <br />
+        <span class="highlight-name">Sabillah Okta Ramadhani</span>
+      </h1>
+      <p class="subtitle">Ada sebuah hadiah manis yang disiapkan khusus untukmu di hari istimewa ini... 💕</p>
+
+      <!-- 3D Gift Box Interactive Component -->
+      <div class="gift-box-wrapper" id="gift-box-wrapper">
+        <div class="gift-sparkles">
+          <span>✨</span><span>💖</span><span>🌸</span><span>✨</span><span>💕</span>
+        </div>
+        <div class="gift-box" id="gift-box">
+          <div class="gift-lid">
+            <div class="ribbon-bow">
+              <div class="bow-left"></div>
+              <div class="bow-right"></div>
+              <div class="bow-center"></div>
+            </div>
+            <div class="lid-ribbon-v"></div>
+          </div>
+          <div class="gift-body">
+            <div class="body-ribbon-v"></div>
+            <div class="body-ribbon-h"></div>
+            <div class="gift-shadow"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <button class="btn-open-gift" id="btn-open">
+        <i class="fa-solid fa-gift"></i> Buka Kado Spesial
+      </button>
+      <p class="click-hint">Klik tombol atau kotak kado untuk membuka kejutan 🎁</p>
+    </div>
+  </section>
+
+  <!-- Main Experience Screen (Hidden initially) -->
+  <main id="main-content" class="main-content hidden">
+
+    <!-- Sticky Floating Audio Player Bar -->
+    <div class="audio-player-bar" id="audio-player">
+      <div class="vinyl-disk" id="vinyl-disk">
+        <i class="fa-solid fa-music"></i>
+      </div>
+      <div class="player-info">
+        <span class="track-title" id="track-title">Jatuh Suka (ke Bibull)</span>
+        <span class="track-status" id="track-status">Klik tombol play untuk mendengarkan</span>
+      </div>
+      <div class="player-controls">
+        <button id="btn-play-pause" class="btn-circle" title="Play/Pause">
+          <i class="fa-solid fa-play" id="play-icon"></i>
+        </button>
+        <button id="btn-mute" class="btn-circle secondary" title="Mute/Unmute">
+          <i class="fa-solid fa-volume-high" id="mute-icon"></i>
+        </button>
+      </div>
+      <!-- Hidden Audio Element -->
+      <audio id="bg-music" loop autoplay preload="auto">
+        <source src="assets/audio/romantic_song.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung elemen audio.
+      </audio>
+    </div>
+
+    <!-- Hero Header Banner -->
+    <header class="birthday-header">
+      <div class="header-overlay"></div>
+      <div class="container header-content">
+        <div class="crown-badge">👑 Happy Birthday My Love</div>
+        <h2 class="hero-name">Sabillah Okta Ramadhani</h2>
+        <p class="hero-date">✨ Selamat Ulang Tahun yang ke-19 Tahun✨</p>
+        <div class="header-decoration">
+          <span class="floating-heart">💖</span>
+          <span class="floating-heart delay-1">🌸</span>
+          <span class="floating-heart delay-2">✨</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Interactive Birthday Cake & Candles -->
+    <section class="cake-section container">
+      <div class="section-badge">Make A Wish 🎂</div>
+      <h3 class="section-title">Tiup Lilin Ulang Tahun!</h3>
+      <p class="section-sub">Klik pada api lilin untuk meniup dan buat harapan terbaik kamu hari ini 💕</p>
+
+      <div class="cake-container" id="cake-container">
+        <div class="candle" id="candle">
+          <div class="flame" id="flame"></div>
+          <div class="smoke hidden" id="smoke"></div>
+        </div>
+        <div class="cake">
+          <div class="plate"></div>
+          <div class="layer layer-bottom"></div>
+          <div class="layer layer-middle"></div>
+          <div class="layer layer-top"></div>
+          <div class="icing"></div>
+          <div class="drips">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+      <div id="wish-message" class="wish-message hidden">
+        🎉 Semoga semua impian dan cita-citamu terkabul, Bibul sayang! 💖✨
+      </div>
+    </section>
+
+    <!-- Romantic Letter Section -->
+    <section class="letter-section container">
+      <div class="card-envelope-wrapper">
+        <div class="letter-card">
+          <div class="letter-header">
+            <i class="fa-solid fa-envelope-open-text letter-icon"></i>
+            <h3>Surat Spesial Untuk Bibul 💕</h3>
+            <span class="letter-date">Hari Spesialmu</span>
+          </div>
+          <div class="letter-body">
+            <p class="letter-salutation">Untuk Sabillah Okta Ramadhani yang tersayang,</p>
+            <p>
+              Di hari yang special ini, aku berdoa semoga di umur kamuu yang ke-19 ini kamu selalu diberi Kesehatan dan kebahagiaan. Semoga kamu selalu dikelilingi oleh orang-orang yang sayang sama kamuu dan hal baik selalu datang ke kamu. Semoga hidup kamu diberikan keberkahan dan segala urusan kamu dipermudah serta impian kamu tercapai.            </p>
+            <p>
+              Aku mau ngucapin terima kasih ke kamu karena udah hadir dihidup aku, terimakasihh untuk segala hal baik dan hal positif yang kamu kasih ke akuu. makasihh udh selalu support aku, makasii udah selalu ingetin aku tentang kebaikan. Terimakasihh udah buat hari-hari aku makin berwarna.
+            </p>
+            <p>
+              Semoga dengan bersama aku, kamu ga lagi mempertanyakan apakah kamu pantas dicintai atau tidak, karena aku akan selalu memilih kamu bul. Aku mau nunjukin kalau ada cinta yang luar biasa yang bisa kamu terima tanpa harus kamu bersusah payah mencarinya. Aku mau kamu merasa tenang, aman, dihargai, dan didengar saat Bersama aku. Aku sayang kamuu selalu bul.            </p>
+            <p class="letter-closing">
+              Dengan penuh kasih sayang,<br />
+              <strong class="signature">Seseorang yang selalu mencintaimu ❤️</strong>
+            </p>
+          </div>
+          <div class="letter-footer-stamps">
+            <span>💌 Sealed with Love</span>
+            <span>✨ Always & Forever</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery / Memory Lane -->
+    <section class="gallery-section container">
+      <div class="section-badge">Memory Lane 📸</div>
+      <h3 class="section-title">Kenangan Indah Bersamamu</h3>
+      <p class="section-sub">Klik foto mana saja untuk melihatnya lebih jelas 💕</p>
+
+      <div class="polaroid-grid" id="polaroid-grid">
+        <!-- Photo 1 -->
+        <div class="polaroid-card" data-tilt>
+          <div class="tape"></div>
+          <div class="photo-frame">
+            <img src="assets/foto1.jpeg" alt="Foto Sabilah 1" class="gallery-img" />
+          </div>
+          <div class="polaroid-caption">
+            <p>Semoga aku selalu jadi tempat tenyaman kamu untuk bersandar 😊</p>
+            <span class="photo-date">Sweet Moment #1</span>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="polaroid-card alt-tilt" data-tilt>
+          <div class="tape"></div>
+          <div class="photo-frame">
+            <img src="assets/foto2.jpeg" alt="Foto Sabilah 2" class="gallery-img" />
+          </div>
+          <div class="polaroid-caption">
+            <p>Ini pertama kali kita jalan dan langsung photobox ✨</p>
+            <span class="photo-date">Sweet Moment #2</span>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="polaroid-card" data-tilt>
+          <div class="tape"></div>
+          <div class="photo-frame">
+            <img src="assets/foto3.jpeg" alt="Foto Sabilah 3" class="gallery-img" />
+          </div>
+          <div class="polaroid-caption">
+            <p>Tengil bangett tapi aku sayangg 💕</p>
+            <span class="photo-date">Sweet Moment #3</span>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="polaroid-card alt-tilt" data-tilt>
+          <div class="tape"></div>
+          <div class="photo-frame">
+            <img src="assets/foto4.jpeg" alt="Foto Sabilah 4" class="gallery-img" />
+          </div>
+          <div class="polaroid-caption">
+            <p>Tatapan yang selalu menghangatkan 🥰</p>
+            <span class="photo-date">Sweet Moment #4</span>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="polaroid-card" data-tilt>
+          <div class="tape"></div>
+          <div class="photo-frame">
+            <img src="assets/foto5.jpeg" alt="Foto Sabilah 5" class="gallery-img" />
+          </div>
+          <div class="polaroid-caption">
+            <p>Ini kita kemarin berburu birtday treats kamu ❤️</p>
+            <span class="photo-date">Sweet Moment #5</span>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="polaroid-card alt-tilt" data-tilt>
+          <div class="tape"></div>
+          <div class="photo-frame">
+            <img src="assets/foto6.jpeg" alt="Foto Sabilah 6" class="gallery-img" />
+          </div>
+          <div class="polaroid-caption">
+            <p>Selamanya favoritku 💖</p>
+            <span class="photo-date">Sweet Moment #6</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reasons Why You Are Special Cards Section -->
+    <section class="reasons-section container">
+      <div class="section-badge">Why You're Special 🌟</div>
+      <h3 class="section-title">Alasan Kenapa Sabillah Begitu Istimewa</h3>
+
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-icon"><i class="fa-solid fa-heart"></i></div>
+          <h4>Hati yang Sangat Tulus</h4>
+          <p>Kebaikan dan kepedulian kamu pada orang sekitar selalu membuat siapapun mengagumi kamu.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon"><i class="fa-solid fa-face-smile-beam"></i></div>
+          <h4>Senyuman Penyejuk Hati</h4>
+          <p>Cukup dengan melihat senyuman kamu, hari-hari yang berat terasa begitu ringan dan penuh semangat.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon"><i class="fa-solid fa-star"></i></div>
+          <h4>Pribadi yang Menginspirasi</h4>
+          <p>Semangat kamu dan cara kamu menghadapi hidup selalu menginspirasi aku untuk terus menjadi lebih baik.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon"><i class="fa-solid fa-gem"></i></div>
+          <h4>Selalu Menjadi Diri Sendiri</h4>
+          <p>Kejujuran dan ketulusan sikap kamu membuat kamu begitu unik, langka, dan tak tergantikan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Love Rain Action Box -->
+    <section class="interactive-box container">
+      <div class="love-box-inner">
+        <h3>Ingin Mengirimkan Lebih Banyak Cinta? 💕</h3>
+        <p>Tekan tombol di bawah ini untuk memunculkan kejutan hujan kasih sayang!</p>
+        <button id="btn-love-rain" class="btn-primary glow-button">
+          <i class="fa-solid fa-heart"></i> Hujan Cinta Untuk Sabillah 💖
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="birthday-footer">
+      <p>Dibuat dengan segenap cinta ❤️ khusus untuk <strong>Sabillah Okta Ramadhani</strong></p>
+      <p class="copyright">Happy Birthday & Forever Happy! 🎉✨</p>
+    </footer>
+
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal hidden">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Zoom Foto" />
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
